@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://example.com/images/to-kill-a-mockingbird.jpg",
+      "review": "A timeless classic that explores human morality and the deep roots of prejudice.",
+      "totalPages": 281,
+      "rating": 4.9,
+      "category": "Fiction",
+      "tags": ["Classic", "Social Justice"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 2,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.ibb.co.com/9VC6FVy/mok.jpg",
+      "review": "A chilling portrayal of a dystopian future under constant surveillance.",
+      "totalPages": 328,
+      "rating": 4.8,
+      "category": "Dystopian",
+      "tags": ["Dystopia", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://i.ibb.co.com/Fw8bZ4N/lamb.jpg",
+      "review": "A poignant critique of the American Dream wrapped in an elegant narrative.",
+      "totalPages": 180,
+      "rating": 4.7,
+      "category": "Classic",
+      "tags": ["Romance", "Tragedy"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Alchemist",
+      "author": "Paulo Coelho",
+      "image": "https://i.ibb.co.com/0Y4b68z/court.jpg",
+      "review": "An inspiring tale about following one’s dreams and listening to the heart.",
+      "totalPages": 208,
+      "rating": 4.6,
+      "category": "Adventure",
+      "tags": ["Philosophy", "Self-discovery"],
+      "publisher": "HarperCollins",
+      "yearOfPublishing": 1988
+    },
+    {
+      "bookId": 5,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://i.ibb.co.com/M61MLdw/catcher.jpg",
+      "review": "A brilliant examination of manners, upbringing, and marriage in early 19th-century England.",
+      "totalPages": 432,
+      "rating": 4.8,
+      "category": "Romance",
+      "tags": ["Classic", "Society"],
+      "publisher": "T. Egerton",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://i.ibb.co.com/NyLvqLt/atwood.jpg",
+      "review": "A deeply moving story of a teenager’s journey through alienation and loss.",
+      "totalPages": 214,
+      "rating": 4.5,
+      "category": "Coming-of-Age",
+      "tags": ["Teen", "Rebellion"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    }
+  ]
+  
