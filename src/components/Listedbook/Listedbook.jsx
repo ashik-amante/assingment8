@@ -41,7 +41,7 @@ const Listedbook = () => {
 
 
     return (
-        <div>
+        <div className='max-w-7xl mx-auto space-y-10'>
             <h1 className='text-4xl text-center'>Books</h1>
             <div className='flex justify-center mt-8'>
                 <details className="dropdown">
@@ -64,7 +64,7 @@ const Listedbook = () => {
                         {/* Read books section  */}
                         <div >
                             {
-                                readbooklist.map(book => <div key={book.bookId} className='grid grid-cols-4 border gap-10 rounded-lg mb-6 text-black bg-white p-6'>
+                                readbooklist.map(book => <div key={book.bookId} className='grid md:grid-cols-4 border gap-10 rounded-lg mb-6 text-black bg-white p-6'>
                                     <div className='grid col-span-1 p-6 bg-gray-100 rounded-lg '>
                                         <div className='flex items-center justify-center'>
                                             <img style={{ width: '100px', borderRadius: '10px' }} src={book.image} alt="" />

@@ -4,7 +4,7 @@ import Bookscard from '../BooksCard/Bookscard';
 
 const Home = () => {
     return (
-        <div>
+        <div className='max-w-7xl mx-auto space-y-10'>
             <Banner></Banner>
             <Bookscard></Bookscard>
         </div>

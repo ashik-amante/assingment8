@@ -57,7 +57,7 @@ const Bookdetails = () => {
     const { image, bookName, author, category, publisher, rating, review, totalPages, tags, yearOfPublishing } = book
     return (
         <div className='bg-white text-black mt-20' >
-            <div className='flex gap-14 justify-center  mt-4'>
+            <div className='md:flex md:gap-14 justify-center  mt-4'>
                 <div className='p-16 bg-[#F3F3F3] rounded-lg'>
                     <img style={{ width: '400px', borderRadius: '10px' }} src={image} alt="" />
                 </div>
