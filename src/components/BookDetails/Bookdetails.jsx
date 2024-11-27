@@ -1,27 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import { saveReadBooks } from '../../utility/readbook';
+import { getStoredReadBooks, saveReadBooks } from '../../utility/readbook';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getStoredWishBooks, saveWishBooks } from '../../utility/wishlist';
 
 const Bookdetails = () => {
+    const [readBookdata,setReadBookData] = useState([])
+    const [wishlist,setWishlist] = useState([])
+    console.log(readBookdata);
+    useEffect(()=>{
+        const lsreadBook = getStoredReadBooks()
+        setReadBookData(lsreadBook)
+    },[])
+
+    useEffect(()=>{
+        const lswishedBook = getStoredWishBooks()
+        setWishlist(lswishedBook)
+    },[])
+
+
     const books = useLoaderData();
-    console.log(books);
+    // console.log(books);
     const { bookId } = useParams()
     const bookIdInt = parseInt(bookId)
-    console.log(typeof (bookId));
-    console.log(bookIdInt);
+    // console.log(typeof (bookId));
+    // console.log(bookIdInt);
 
     const handleReadbook = () =>{
+        const existRead = readBookdata.find(readId=> readId === bookIdInt )
+        if(!existRead){
+            toast.success('added')
+        }
+        else{
+            toast.warn('already add')
+        }
+        // toast('Added to Read List')
         saveReadBooks(bookIdInt)
-        toast('Added to Read List')
+    }
+
+    const handleWishlist = () =>{
+        const existwish = wishlist.find(wishid=> wishid === bookIdInt)
+        const existRead = readBookdata.find(readId=> readId === bookIdInt ) 
+        if(!existwish && !existRead){
+            toast.success('Added to wish list')
+            
+        }
+        else{
+            toast.warning('You have already Read this book')
+        }
+        saveWishBooks(bookIdInt)
     }
 
     const book = books.find(book => book.bookId === bookIdInt)
-    console.log(book);
+    // console.log(book);
     const { image, bookName, author, category, publisher, rating, review, totalPages, tags, yearOfPublishing } = book
     return (
-        <div className='bg-white text-black' >
+        <div className='bg-white text-black mt-20' >
             <div className='flex gap-14 justify-center  mt-4'>
                 <div className='p-16 bg-[#F3F3F3] rounded-lg'>
                     <img style={{ width: '400px', borderRadius: '10px' }} src={image} alt="" />
@@ -30,6 +65,7 @@ const Bookdetails = () => {
                     <div>
                         <div className='space-y-5 mb-4'>
                             <h1 className='font-bold text-4xl'>{bookName}</h1>
+                            <h1 className='font-bold text-4xl'>{bookId}</h1>
                             <p className='font-bold text-xl'>By : {author} </p>
                         </div>
                         <hr />
@@ -60,7 +96,7 @@ const Bookdetails = () => {
                         </div>
                         <div className='flex  gap-6 mt-8'>
                             <button onClick={handleReadbook} className='bg-transparent border border-gray-400 text-black px-7 py-2 rounded'>Read</button>
-                            <button className='bg-[#50B1C9] text-white px-7 py-2 rounded'>Wishlist</button>
+                            <button onClick={handleWishlist} className='bg-[#50B1C9] text-white px-7 py-2 rounded'>Wishlist</button>
                         </div>
                         <ToastContainer />
                     </div>

@@ -8,7 +8,7 @@ const Card = ({ book }) => {
             <Link to={`/bookdetail/${bookId}`}>
                 <div className='border rounded-2xl p-6'>
                     <div >
-                        <div className='px-24 py-8 bg-[#F3F3F3] rounded-2xl mb-6'>
+                        <div className='px-24 py-8       rounded-2xl mb-6'>
                             <div className='flex items-center justify-center'>
                                 <img style={{width:'100px', borderRadius:'10px'}} src={image} alt="" />
                             </div>
