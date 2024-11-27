@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredReadBooks } from '../../utility/readbook';
 import { getStoredWishBooks } from '../../utility/wishlist';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { GoLocation } from "react-icons/go";
 import { IoPeopleOutline } from "react-icons/io5";
 import { TbBrandPagekit } from "react-icons/tb";
@@ -38,7 +38,7 @@ const Listedbook = () => {
         setWishlist(wishbooks)
     }, [])
 
-  
+
 
     return (
         <div>
@@ -103,7 +103,9 @@ const Listedbook = () => {
                                         <div className='flex gap-5 mt-3'>
                                             <button className='bg-blue-50 text-blue-400 font-semibold px-4 rounded-2xl '>Category: {book.category}</button>
                                             <button className='bg-orange-50 text-orange-400 font-semibold px-4 rounded-2xl '>Rating : {book.rating}</button>
-                                            <button className='bg-green-600 text-white font-semibold px-4 rounded-2xl py-1 '>View Details </button>
+                                            <Link to={`/bookdetail/${book.bookId}`}>
+                                                <button className='bg-green-600 text-white font-semibold px-4 rounded-2xl py-1 '>View Details </button>
+                                            </Link>
                                         </div>
                                     </div>
 
@@ -158,7 +160,9 @@ const Listedbook = () => {
                                         <div className='flex gap-5 mt-3'>
                                             <button className='bg-blue-50 text-blue-400 font-semibold px-4 rounded-2xl '>Category: {book.category}</button>
                                             <button className='bg-orange-50 text-orange-400 font-semibold px-4 rounded-2xl '>Rating : {book.rating}</button>
-                                            <button className='bg-green-600 text-white font-semibold px-4 rounded-2xl py-1 '>View Details </button>
+                                            <Link to={`/bookdetail/${book.bookId}`}>
+                                                <button className='bg-green-600 text-white font-semibold px-4 rounded-2xl py-1 '>View Details </button>
+                                            </Link>
                                         </div>
                                     </div>
 
