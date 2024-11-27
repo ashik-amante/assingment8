@@ -5,9 +5,7 @@ import Bookscard from '../BooksCard/Bookscard';
 const Home = () => {
     return (
         <div>
-            <div className='mb-2 border'>
-                <Banner></Banner>
-            </div>
+            <Banner></Banner>
             <Bookscard></Bookscard>
         </div>
     );
