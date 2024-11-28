@@ -12,10 +12,24 @@ import { TfiArrowCircleDown } from "react-icons/tfi";
 
 
 const Listedbook = () => {
+
     const [readbooklist, setReadBooklist] = useState([])
     const [wishlist, setWishlist] = useState([])
+
+
+
+
+
+    const handlefilter = filter => {
+        if (filter === 'pages') {
+            const sortedList = [...readbooklist].sort(function (a, b) {
+                return b.totalPages - a.totalPages
+            })
+            setReadBooklist(sortedList)
+        }
+    }
     console.log(readbooklist);
-    console.log(wishlist);
+    // console.log(wishlist);
 
     // load books from route path
     const books = useLoaderData()
@@ -25,7 +39,9 @@ const Listedbook = () => {
         const storedBooklist = getStoredReadBooks()
         const readbooks = books.filter(book => storedBooklist.includes(book.bookId))
         setReadBooklist(readbooks)
-    }, [])
+    }, [books])
+
+
 
     // load Wishlist Books from loacal storage 
     useEffect(() => {
@@ -36,7 +52,7 @@ const Listedbook = () => {
             wishbooks.push(book)
         }
         setWishlist(wishbooks)
-    }, [])
+    }, [books])
 
 
 
@@ -47,8 +63,8 @@ const Listedbook = () => {
                 <details className="dropdown">
                     <summary className="btn m-1 bg-green-600 text-white   ">Sort By <span className='text-lg'><TfiArrowCircleDown /></span> </summary>
                     <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow  items-center">
-                        <li><a>Rating</a></li>
-                        <li><a>Number Of Page</a></li>
+                        <li onClick={() => handlefilter('all')}><a>Rating</a></li>
+                        <li onClick={() => handlefilter('pages')}><a>Number Of Page</a></li>
                         <li><a>Publisher Year</a></li>
                     </ul>
                 </details>
@@ -109,10 +125,10 @@ const Listedbook = () => {
                                         </div>
                                     </div>
 
-                                </div>) 
+                                </div>)
                             }
                         </div>
-                        <h2>Any content 1</h2>
+
 
                     </TabPanel>
                     {/* Read book loist ends  */}
@@ -169,7 +185,7 @@ const Listedbook = () => {
                                 </div>)
                             }
                         </div>
-                        <h2>Any content 2</h2>
+
                     </TabPanel>
                 </Tabs>
             </div>
