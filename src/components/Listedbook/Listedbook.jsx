@@ -22,10 +22,15 @@ const Listedbook = () => {
 
     const handlefilter = filter => {
         if (filter === 'pages') {
-            const sortedList = [...readbooklist].sort(function (a, b) {
+            const sortedReadList = [...readbooklist].sort(function (a, b) {
                 return b.totalPages - a.totalPages
             })
-            setReadBooklist(sortedList)
+            const sortedWishList = [...wishlist].sort(function(a,b) {
+                return b.totalPages - a.totalPages
+            })
+            setWishlist(sortedWishList)
+            setReadBooklist(sortedReadList)
+            
         }
     }
     console.log(readbooklist);
