@@ -12,7 +12,7 @@ import Home from './components/Home/Home.jsx';
 import Listedbook from './components/Listedbook/Listedbook.jsx';
 import Bookdetails from './components/BookDetails/Bookdetails.jsx';
 import Pagetoread from './components/PageToread/Pagetoread.jsx';
-import Test from './components/test/Test.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -40,17 +40,14 @@ const router = createBrowserRouter([
         element: <Pagetoread></Pagetoread>,
         loader:()=> fetch('../books.json')
       },
-      {
-        path:'/test',
-        element: <Test></Test>,
-        loader:()=> fetch('../books.json')
-      }
+     
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    
     <RouterProvider router={router} />
   </StrictMode>,
 )

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { getStoredReadBooks } from '../../utility/readbook';
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Pagetoread = () => {
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
@@ -36,6 +37,9 @@ const Pagetoread = () => {
     };
     return (
         <div className=' flex items-center justify-center mt-10 '>
+            <Helmet>
+                <title>Page To Read</title>
+            </Helmet>
             <div >
                 <BarChart
                     width={600}

@@ -8,6 +8,7 @@ import { GoLocation } from "react-icons/go";
 import { IoPeopleOutline } from "react-icons/io5";
 import { TbBrandPagekit } from "react-icons/tb";
 import { TfiArrowCircleDown } from "react-icons/tfi";
+import { Helmet } from 'react-helmet';
 
 
 
@@ -62,7 +63,11 @@ const Listedbook = () => {
 
 
     return (
+        
         <div className='max-w-7xl mx-auto space-y-10'>
+            <Helmet>
+                <title>Listed Book</title>
+            </Helmet>
             <h1 className='text-4xl text-center'>Books</h1>
             <div className='flex justify-center mt-8'>
                 <details className="dropdown">

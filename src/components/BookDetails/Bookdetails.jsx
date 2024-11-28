@@ -4,6 +4,7 @@ import { getStoredReadBooks, saveReadBooks } from '../../utility/readbook';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getStoredWishBooks, saveWishBooks } from '../../utility/wishlist';
+import { Helmet } from 'react-helmet';
 
 const Bookdetails = () => {
     const [readBookdata,setReadBookData] = useState([])
@@ -57,6 +58,9 @@ const Bookdetails = () => {
     const { image, bookName, author, category, publisher, rating, review, totalPages, tags, yearOfPublishing } = book
     return (
         <div className='bg-white text-black mt-20' >
+            <Helmet>
+                <title>Book Detail</title>
+            </Helmet>
             <div className='md:flex md:gap-14 justify-center  mt-4'>
                 <div className='p-16 bg-[#F3F3F3] rounded-lg'>
                     <img style={{ width: '400px', borderRadius: '10px' }} src={image} alt="" />
